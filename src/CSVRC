@@ -1,0 +1,6 @@
+               88  :PRFX:RECORD-COMPLETE             VALUE +1.
+               88  :PRFX:FIELD-COMPLETE              VALUE +2.
+               88  :PRFX:FIELD-INCOMPLETE            VALUE +3.
+               88  :PRFX:ERROR-PARM                  VALUE +16.
+               88  :PRFX:ERROR-OPT                   VALUE +17.
+

@@ -1,0 +1,9 @@
+       01  :PRFX:RECORD-LENGTH         PIC S9(009) BINARY.
+      *    Input
+       01  :PRFX:RECORD-ADDRESS        POINTER.
+      *    Input
+       01  :PRFX:FIELD-LENGTH          PIC S9(009) BINARY.
+      *    Output
+       01  :PRFX:FIELD-ADDRESS         POINTER.
+      *    Output
+       

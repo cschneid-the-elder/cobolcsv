@@ -1,0 +1,17 @@
+#
+# ignore executables
+#
+CSVPARSE.so
+EXAMPLE1
+#
+# ignore listings
+*.lst
+#
+# ignore build log
+# 
+build.log
+# 
+# ignore backup script
+# 
+bkup
+# 

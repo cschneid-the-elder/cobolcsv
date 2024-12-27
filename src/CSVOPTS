@@ -1,0 +1,10 @@
+       01  :PRFX:OPTS.
+           05  :PRFX:FIELD-DELIMITER   PIC X(001).
+           05  :PRFX:LEADING-EQUAL     PIC X(001).
+               88  :PRFX:TOLERATE-LEADING-EQUAL   VALUE 'Y' FALSE 'N'.
+           05  :PRFX:STYLE             PIC X(001).
+               88  :PRFX:UNIX                     VALUE 'U'.
+      *            http://www.catb.org/~esr/writings/taoup/html/ch05s02.html
+               88  :PRFX:RFC4180                  VALUE 'R'.
+      *            https://www.rfc-editor.org/rfc/rfc4180
+
