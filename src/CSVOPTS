@@ -7,4 +7,6 @@
       *            http://www.catb.org/~esr/writings/taoup/html/ch05s02.html
                88  :PRFX:RFC4180                  VALUE 'R'.
       *            https://www.rfc-editor.org/rfc/rfc4180
+           05  :PRFX:CLEANUP-SW        PIC X(001).
+               88  :PRFX:CLEANUP                  VALUE 'Y' FALSE 'N'.
 

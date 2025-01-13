@@ -82,7 +82,7 @@
        Copy CSVPARMS Replacing ==:PRFX:== By ==CSVPARSE-==.
 
        Linkage Section.
-       >>IF IGY-COMPILER-VRM NOT DEFINED
+       >>IF IGY-COMPILER-VRM DEFINED
        01  OS-PARM.
            05  OS-PARM-LENGTH      PIC S9(004) BINARY.
            05  OS-PARM-VALUE       PIC X(003).
@@ -110,6 +110,14 @@
            PERFORM 1000-PROCESS-INPUT01
              UNTIL INPUT01-EOF
            
+           SET CSVPARSE-CLEANUP TO TRUE
+           CALL "CSVPARSE" USING
+             CSVPARSE-OPTS
+             OMITTED
+             OMITTED
+             OMITTED
+             OMITTED
+           END-CALL
            CLOSE INPUT01
            MOVE +0 TO RETURN-CODE
            GOBACK.
@@ -167,6 +175,8 @@
                     ' file format style must be U or R'
                   PERFORM 9999-ABEND
            END-EVALUATE
+           
+           SET CSVPARSE-CLEANUP TO FALSE
            .
            
        1000-PROCESS-INPUT01.
