@@ -1,6 +1,14 @@
        Identification Division.
        Program-ID. CSVPARSE.
       * 
+      *   This program is distributed in the hope that it will be 
+      *   useful, but WITHOUT ANY WARRANTY; without even the implied
+      *   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+      *   PURPOSE. See the MIT License for more details.
+      * 
+      * Author: Craig Schneiderwent
+      * https://github.com/cschneid-the-elder/cobolcsv
+      * 
       * The purpose of this program is to encapsulate the processing
       * necessary to parse a CSV (Comma Separated Value) file.  This
       * is a bit of a misnomer, as the field delimiter may be specified
@@ -89,6 +97,17 @@
          PARM-FIELD-ADDRESS
          .
          
+           IF OPT-CLEANUP
+               *> If the caller doesn't indicate cleanup is needed
+               *> then there will be a memory leak of the current 
+               *> size of CSV-FIELD, which will probably be cleaned
+               *> up by the host OS, but why leave that to chance?
+               SET CSV-FIELD-PTR TO ADDRESS OF CSV-FIELD
+               FREE CSV-FIELD-PTR
+               MOVE +0 TO RETURN-CODE
+               GOBACK
+           END-IF
+           
            PERFORM 0100-INIT
            
            IF PREV-REC-POSN > PARM-RECORD-LENGTH
